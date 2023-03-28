@@ -7,14 +7,16 @@ const Header = () =>{
             <div className="logo">
                 <Link to="/"> <h2> MyFitnessApp</h2></Link>        
             </div>
-            <div className="menu">
+  
+            <nav>
                 <NavLink to="/login">
-                    <button> Entrar </button>
-                    </NavLink>
+                     Entrar 
+                </NavLink>
                 <NavLink to="/register"> 
-                    <button> Registrar </button> 
-                </NavLink>             
-            </div> 
+                        Registrar 
+                </NavLink>   
+            </nav>   
+    
     </StyledHeader>
 
 }

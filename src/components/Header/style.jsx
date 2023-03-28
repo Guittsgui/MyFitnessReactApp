@@ -1,59 +1,52 @@
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
-    background-color: white;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    h2{
-        cursor: pointer;
+    a{
+        text-decoration: none;
         color: yellowgreen;
-        
     }
-    .logo {
-        
-        display: flex;
-        align-items: center;
-        height: 100px;
-        padding-left: 40px;
-        font-size: 20px;
+
+    .logo{
+        margin-left: 25px;
         a{
-            text-decoration: none;
+            font-size: 25px;
         }
     }
-    .menu{
-        button{
-            color: yellowgreen;
-            background-color: white;
-            width: 140px;
-            height: 50px;
+
+    nav{
+        a{
             margin-right: 30px;
-            border: 2px solid yellowgreen;
-            border-radius: 15px;
-            cursor: pointer;
-            &:hover{
-                color: darkgreen;
-                border-color: darkgreen;             
-            }
+            font-size: 20px;
+            border: 1px solid yellowgreen;
+            padding: 10px;
+            border-radius: 20px;
         }
     }
-    
+
+    .active{
+        color: darkgreen;
+        border-color: darkgreen;
+    }
+
     @media (max-width: 500px){
         .logo{
-            font-size: 15px;
-            padding-left: 20px;
-        }
-
-        .menu{
-            button{
-                width: 70px;
-                height: 35px;
-                margin-right: 15px;
+            margin-left: 10px;
+            a{
+                font-size: 18px;
             }
-
         }
+
+        nav{
+            a{
+                margin-right: 10px;
+                font-size: 15px;
+            }
+        }
+
     }
 `;
 
