@@ -8,9 +8,12 @@ const Header = () =>{
                 <Link to="/"> <h2> MyFitnessApp</h2></Link>        
             </div>
             <div className="menu">
-                <NavLink to="/login"><button> Entrar </button></NavLink>
-                <NavLink to="/register"> <button> Registrar </button> </NavLink>
-                
+                <NavLink to="/login">
+                    <button> Entrar </button>
+                    </NavLink>
+                <NavLink to="/register"> 
+                    <button> Registrar </button> 
+                </NavLink>             
             </div> 
     </StyledHeader>
 
