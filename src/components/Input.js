@@ -7,4 +7,5 @@ export const StyledInput = styled.input`
         padding: 5px;
         border-radius: 15px;
         border-color: transparent;
+        text-align: center;
 `;

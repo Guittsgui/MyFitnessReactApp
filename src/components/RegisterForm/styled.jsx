@@ -9,9 +9,17 @@ export const StyledRForm = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #000000b7;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(220,253,45,0.9724264705882353) 100%); 
     gap: 40px;
 
+    h2{
+        color: white;
+        font-size: 40px;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+        text-shadow: 2px 2px 2px black;
+    }
 
     button{
         width: 300px;
@@ -19,10 +27,10 @@ export const StyledRForm = styled.form`
         border-radius: 15px;
         border-color: transparent;
         color: white;
-        background-color: yellowgreen;
+        background-color: #aaf710;
         cursor: pointer;
         &:hover{
-            background-color: #b5ce84;
+            background-color: yellowgreen;
         }
     }
 `;

@@ -6,10 +6,7 @@ function Register() {
   return (
     <>
       <div className='formBox'>
-        <h1> Register </h1>
-        <RegisterForm>
-
-        </RegisterForm>
+        <RegisterForm/>
       </div>
 
     </>

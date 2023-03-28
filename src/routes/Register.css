@@ -1,14 +1,9 @@
 .formBox{
-    height: 750px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.712);
-}
-
-h1{
-    font-size: 45px;
-    margin-bottom: 20px;
 }
