@@ -1,14 +1,16 @@
 import { StyledHeader } from "./style" 
+import { NavLink, Link } from "react-router-dom"
 
 const Header = () =>{
 
     return <StyledHeader>
             <div className="logo">
-                <h2> MyFitnessApp</h2>
+                <Link to="/"> <h2> MyFitnessApp</h2></Link>        
             </div>
             <div className="menu">
-                <button> Entrar </button>
-                <button> Registrar </button>
+                <NavLink to="/login"><button> Entrar </button></NavLink>
+                <NavLink to="/register"> <button> Registrar </button> </NavLink>
+                
             </div> 
     </StyledHeader>
 

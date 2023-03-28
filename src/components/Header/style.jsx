@@ -9,14 +9,19 @@ export const StyledHeader = styled.header`
 
     h2{
         cursor: pointer;
-    }
-    .logo{
         color: yellowgreen;
+        
+    }
+    .logo {
+        
         display: flex;
         align-items: center;
         height: 100px;
         padding-left: 40px;
         font-size: 20px;
+        a{
+            text-decoration: none;
+        }
     }
     .menu{
         button{

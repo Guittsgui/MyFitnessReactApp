@@ -5,12 +5,14 @@ import './index.css'
 import Home from './routes/Home'
 import Login from './routes/Login'
 import Register from './routes/Register'
+import Error from './routes/Error'
 import {createBrowserRouter,RouterProvider}  from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
+    errorElement: <Error/>,
     children: [
       {
         path:'/',
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'register',
-        element: <Login/>
+        element: <Register/>
       },
     ]
 
