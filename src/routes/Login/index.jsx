@@ -7,7 +7,6 @@ function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
   function handleChangeEmail(e){
     setEmail(e.target.value)
   }
@@ -17,14 +16,12 @@ function Login() {
   function handleSubmit(e){
     e.preventDefault()
     console.log(isEmailValid(email))
-    
     alert(`O usuário ${email} com senha ${password} tentou logar`)
   }
 
   return (
     <C.StyledBody>
       <C.StyledRegisterContainer>
-
         <C.StyledFormArea>
           <h2> Realize seu Login </h2>
           <StyledInput placeholder='Informe seu Email :' type="email" value={email} onChange={handleChangeEmail}/>
