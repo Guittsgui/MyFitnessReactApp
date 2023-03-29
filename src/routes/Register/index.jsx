@@ -8,9 +8,10 @@ function Register() {
     <C.StyledBody>
       <C.StyledRegisterContainer>
         <C.StyledBanner>
-          <h1> Seja bem Vindo !</h1>
-          <p> Aqui é o primeiro passo em busca de uma vida melhor e mais saudável.</p>
-          <p> Um caminho sem Volta.</p>
+          <div className='alignBanner'>
+            <h1> Seja bem Vindo !</h1>
+            <p> Aqui é o primeiro passo em busca de uma vida melhor e mais saudável. Um caminho sem Volta. Estamos felizes em ter você conosco.</p>
+          </div>
         </C.StyledBanner>
         <C.StyledFormArea>
           <h2> Registre-se </h2>

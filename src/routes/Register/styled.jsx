@@ -38,12 +38,24 @@ export const StyledBanner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     color: white;
     text-shadow: 1px 1px 1px black;
     gap: 20px;
     box-sizing: border-box;
     text-align: center;
+    h1{
+        font-size: 35px;
+        border-bottom: 1px solid white;
+        padding: 10px;
+    }
+    
+
+    .alignBanner{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
    
 `;
 
