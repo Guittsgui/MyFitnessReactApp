@@ -3,12 +3,13 @@ import { StyledFormContainer } from '../../components/FormContainer/styled'
 import {StyledInput} from './../../components/Input'
 import {StyledButton} from './../../components/Button'
 import {useState} from 'react'
+import {isEmailValid} from './../../utils/isEmailValid'
 
 
 
 function Register() {
 
-
+const [erroMsg, setErroMsg] = useState('')
 const [fieldsData, setFieldsData ] = useState({
   fullname: '',
   email: '',
@@ -22,17 +23,32 @@ function handleChange(e){
     const newData = {...prev, [name]: value}
     return newData
   })
+  setErroMsg('')
 }
 
 function handleSubmit(e){
   (e.preventDefault())
-  alert('chegou')
+  if ( fieldsData.fullname.length < 5){
+    setErroMsg('Nome Inválido')
+    return
+  }
+  if(!isEmailValid(fieldsData.email)){
+    setErroMsg('Informe um Email Válido')
+    return
+  }
+  if(fieldsData.password != fieldsData.confirmPassword){
+    setErroMsg('Senhas não Compatíveis')
+    return
+  }
+  
 }
 
 function countPercent(){
   let percent = 0
   const ammountAdded = 25
-  if(fieldsData.fullname) percent += ammountAdded
+  if(fieldsData.fullname){
+    percent += ammountAdded
+  }
   if(fieldsData.email) percent += ammountAdded
   if(fieldsData.password) percent += ammountAdded
   if(fieldsData.confirmPassword) percent += ammountAdded
@@ -69,9 +85,11 @@ function countPercent(){
              value={fieldsData.confirmPassword} name="confirmPassword"
              onChange={handleChange}/>
 
-            <StyledButton onClick={handleSubmit}> Registre-se </StyledButton>
+            <StyledButton onClick={handleSubmit} disabled={countPercent() != 100}>
+               Registre-se 
+            </StyledButton>
           </C.StyledForm>
-          <C.StyledErrorMsg> Informe sua Senha </C.StyledErrorMsg>
+          {erroMsg && <C.StyledErrorMsg> {erroMsg} </C.StyledErrorMsg>}
        </StyledFormContainer>
      </C.StyledBody>
   )

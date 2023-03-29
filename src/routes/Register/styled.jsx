@@ -23,10 +23,11 @@ export const StyledPercentContainer = styled.div`
     width: 400px;
     margin: 0px auto;
     margin-top: 40px;
+    color: #aaa9a9;
     .percentArea{
         height: 10px;
         width: 400px;
-        border: 1px solid black;
+        border: 1px solid #aaa9a9;
     }
     .percent{
         height: 8px;
