@@ -32,6 +32,16 @@ export const StyledFormArea = styled.form`
         font-size: 30px;
         border-bottom: 3px solid yellowgreen;
         margin-bottom: 30px;
+        padding: 10px;
+    }
+    .container{
+        height: 10px;
+        width: 350px;
+        border: 1px solid black;
+    }
+    .percent{
+        background-color: yellowgreen;
+        height: 8px;
     }
     
 `;

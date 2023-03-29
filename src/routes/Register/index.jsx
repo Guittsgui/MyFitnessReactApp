@@ -14,15 +14,37 @@ function Register() {
     password: '',
     confirmPassword: ''
   })
-
+  const [error, setError] = useState(false)
+ 
   function handleChangeInput(e){ 
     const {name, value} = e.target
-    
     setData((prev) => {
       const newData = {...prev, [name]: value}
       return newData;
     })
-    console.log(data.fullname)
+  }
+
+  function calculateProgress(){
+    let value = 0
+    const amountToAdd = 25
+
+    if (data.fullname){
+      value += amountToAdd
+    }
+    if (data.email){
+      value += amountToAdd
+    }
+    if (data.password){
+      value += amountToAdd
+    }
+    if (data.confirmPassword){
+      value += amountToAdd
+    }
+    return value
+  }
+
+  function handleSubmit(e){
+      e.preventDefault()
   }
 
   return (
@@ -36,18 +58,23 @@ function Register() {
         </C.StyledBanner>
 
         <C.StyledFormArea>
+          <p> Processo: {calculateProgress()} %</p>
+          <div className="container">
+            <div className="percent" style={{width:`${calculateProgress()}%`}}>
+            </div>
+          </div>
           <h2> Registre-se </h2>
 
-          <StyledInput placeholder='Informe seu Nome :' type="text" name='fullname' value={data.fullname} onChange={handleChangeInput}/>
+          <StyledInput placeholder='Informe seu Nome :' type="text" name='fullname' value={data.fullname} onChange={handleChangeInput} autoComplete="off"/>
 
-          <StyledInput placeholder='Informe seu Email :' name='email' type="email" value={data.email} onChange={handleChangeInput}/>
+          <StyledInput placeholder='Informe seu Email :' name='email' type="email" value={data.email} onChange={handleChangeInput} autoComplete="off"/>
 
-          <StyledInput placeholder='Informe sua Senha :'name='password' type="password" value={data.password} onChange={handleChangeInput}/>
+          <StyledInput placeholder='Informe sua Senha :'name='password' type="password" value={data.password} onChange={handleChangeInput} autoComplete="off"/>
 
           <StyledInput placeholder='Repita sua Senha :' name='confirmPassword' type="password" 
-          value={data.confirmPassword} onChange={handleChangeInput}/>
+          value={data.confirmPassword} onChange={handleChangeInput} autoComplete="off"/>
 
-          <StyledButton> Registrar </StyledButton>
+          <StyledButton onClick={handleSubmit}> Registrar </StyledButton>
         </C.StyledFormArea>
 
       </C.StyledRegisterContainer>
