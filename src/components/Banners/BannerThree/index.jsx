@@ -11,7 +11,7 @@ const BannerThree = () => {
               <li> Calculo de IMC </li>
               <li> Blog de Receitas </li>
               <li> Notícias  Fitness </li>
-              <li> Playlist's espciais </li>
+              <li> Playlist's Especiais </li>
               <li> Suporte Whatzapp</li>            
           </ul>
         </div>

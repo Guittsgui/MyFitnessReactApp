@@ -10,7 +10,7 @@ function Register() {
         <C.StyledBanner>
           <div className='alignBanner'>
             <h1> Seja bem Vindo !</h1>
-            <p> Aqui é o primeiro passo em busca de uma vida melhor e mais saudável. Um caminho sem Volta. Estamos felizes em ter você conosco.</p>
+            <p> Aqui é o primeiro passo em busca de uma vida melhor e mais saudável. Um caminho sem Volta. Estamos felizes em ter você conosco. Daqui para frente transformaremos seu estilo de vida completamenet.</p>
           </div>
         </C.StyledBanner>
         <C.StyledFormArea>

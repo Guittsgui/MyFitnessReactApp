@@ -14,6 +14,10 @@ export const StyledRegisterContainer = styled.div`
     display: flex;
     box-shadow: 3px 3px 3px #00000050;
 
+    @media (max-width: 500px){
+        width: 400px;
+    }
+
 `;
 
 export const StyledFormArea = styled.form`
@@ -56,6 +60,9 @@ export const StyledBanner = styled.div`
         flex-direction: column;
         gap: 30px;
     }
-   
+    
+    @media (max-width: 500px){
+        display: none;
+    }
 `;
 
