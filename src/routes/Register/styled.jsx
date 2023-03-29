@@ -23,15 +23,26 @@ export const StyledPercentContainer = styled.div`
     width: 400px;
     margin: 0px auto;
     margin-top: 40px;
+    font-size: 15px;
     color: #aaa9a9;
     .percentArea{
         height: 10px;
         width: 400px;
         border: 1px solid #aaa9a9;
+        
     }
     .percent{
         height: 8px;
         background-color: yellowgreen;
+    }
+    
+    @media (max-width: 500px){
+        width: 300px;
+        font-size: 12px;
+
+        .percentArea{
+            width: 280px;
+        }
     }
 `;
 
