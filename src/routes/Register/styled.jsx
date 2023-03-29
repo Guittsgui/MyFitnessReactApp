@@ -30,7 +30,6 @@ export const StyledPercentContainer = styled.div`
     }
     .percent{
         height: 8px;
-        width: 25%;
         background-color: yellowgreen;
     }
 `;
