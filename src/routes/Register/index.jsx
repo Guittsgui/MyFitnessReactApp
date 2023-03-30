@@ -29,16 +29,24 @@ function handleChange(e){
 function handleSubmit(e){
   (e.preventDefault())
   validateForm()
-  fetch('http://localhost:3000/user', {
-    method:'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(fieldsData)
-  })
-  .then((response) => console.log(response))
-  .then((json)=> console.log(json))
-  .catch()
+
+  async function createUser(){
+    try{
+      const response = await fetch('http://localhost:3000/user', {
+        method:'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(fieldsData)
+      })
+     const json = await response.json()
+      console.log(json)
+    }catch{
+      
+    }
+  }
+  createUser()
+
 }
 
 function validateForm(){
