@@ -1,5 +1,9 @@
 export const api = {
 
+    getAllUsers: ()=>{
+
+    },
+
     addNewUser: async (user)=>{
         const response = await fetch('http://localhost:3000/user', {
             method:'POST',
@@ -12,6 +16,6 @@ export const api = {
           return json
     }
 
-    
+
 
 }
