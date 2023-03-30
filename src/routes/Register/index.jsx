@@ -4,7 +4,7 @@ import {StyledInput} from './../../components/Input'
 import {StyledButton} from './../../components/Button'
 import {useState} from 'react'
 import {isEmailValid} from './../../utils/isEmailValid'
-
+import {api} from './../../api'
 
 
 function Register() {
@@ -28,28 +28,6 @@ function handleChange(e){
 
 function handleSubmit(e){
   (e.preventDefault())
-  validateForm()
-
-  async function createUser(){
-    try{
-      const response = await fetch('http://localhost:3000/user', {
-        method:'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(fieldsData)
-      })
-     const json = await response.json()
-      console.log(json)
-    }catch{
-      
-    }
-  }
-  createUser()
-
-}
-
-function validateForm(){
   const splited = fieldsData.fullname.split(" ")
   if (splited.length === 1){
     setErroMsg('Nome Inválido')
@@ -66,7 +44,18 @@ function validateForm(){
     setErroMsg('Senhas não Compatíveis')
     return
   }
+
+  async function createUser(){
+    try{
+      const json = api.addNewUser(fieldsData)
+    }catch{
+    }
+  }
+
+  createUser()
 }
+
+
 
 function countPercent(){
   let percent = 0
