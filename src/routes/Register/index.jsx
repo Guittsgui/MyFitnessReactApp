@@ -48,6 +48,7 @@ function handleSubmit(e){
   async function createUser(){
     try{
       const json = api.addNewUser(fieldsData)
+      console.log(json)
     }catch{
     }
   }

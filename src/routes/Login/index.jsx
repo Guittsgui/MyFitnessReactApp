@@ -4,8 +4,11 @@ import {StyledInput} from './../../components/Input'
 import {StyledButton} from './../../components/Button'
 import {useState} from 'react'
 import {isEmailValid} from './../../utils/isEmailValid'
+import {api} from '../../api'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+  const navigate = useNavigate()
 
   const [error, setError] = useState('')
   const [ data, setData] = useState({
@@ -26,7 +29,25 @@ function Login() {
     e.preventDefault()
     if(!isEmailValid(data.email)){
       setError('Informe um Email válido')
+      return
     }
+    const loginInfo = {
+      email: data.email,
+      password: data.password
+    } 
+    async function verifyLogin(){
+      try{
+        const [json,response] = await api.validateUserLogin(loginInfo)
+        if(response.status === 200){
+          navigate('/home')
+        }else{
+          setError(json.msg)
+        }
+      }catch{
+        setError('Ops, Algo deu Errado')
+      }
+    }
+    verifyLogin()
   }
 
   return (
