@@ -9,6 +9,7 @@ import {api} from './../../api'
 
 function Register() {
 
+const [aceptMsg, setAceptMsg] = useState('')
 const [erroMsg, setErroMsg] = useState('')
 const [fieldsData, setFieldsData ] = useState({
   fullname: '',
@@ -47,8 +48,12 @@ function handleSubmit(e){
 
   async function createUser(){
     try{
-      const json = api.addNewUser(fieldsData)
-      console.log(json)
+      const [json,response] = await api.addNewUser(fieldsData)
+      if(response.status === 201){
+        setAceptMsg(json.msg)
+      }else{
+        setErroMsg(json.msg)
+      }
     }catch{
     }
   }

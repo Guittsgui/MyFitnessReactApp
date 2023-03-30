@@ -13,8 +13,7 @@ export const api = {
             body: JSON.stringify(user)
           })
           const json = await response.json()
-          console.log(json)
-          return json
+          return [json, response]
     },
 
     validateUserLogin: async(user)=>{
