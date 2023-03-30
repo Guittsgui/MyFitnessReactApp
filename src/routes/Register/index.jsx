@@ -28,7 +28,22 @@ function handleChange(e){
 
 function handleSubmit(e){
   (e.preventDefault())
-  if ( fieldsData.fullname.length < 5){
+  validateForm()
+  fetch('http://localhost:3000/user', {
+    method:'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(fieldsData)
+  })
+  .then((response) => console.log(response))
+  .then((json)=> console.log(json))
+  .catch()
+}
+
+function validateForm(){
+  const splited = fieldsData.fullname.split(" ")
+  if (splited.length === 1){
     setErroMsg('Nome Inválido')
     return
   }
@@ -36,11 +51,13 @@ function handleSubmit(e){
     setErroMsg('Informe um Email Válido')
     return
   }
+  if(fieldsData.password.length < 6){
+    setErroMsg('Senha mínima de 06 dígitos')
+  }
   if(fieldsData.password != fieldsData.confirmPassword){
     setErroMsg('Senhas não Compatíveis')
     return
   }
-  
 }
 
 function countPercent(){
