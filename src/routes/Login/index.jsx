@@ -38,6 +38,7 @@ function Login() {
     async function verifyLogin(){
       try{
         const [json,response] = await api.validateUserLogin(loginInfo)
+        console.log(json)
         if(response.status === 200){
           navigate('/home')
         }else{
