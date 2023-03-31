@@ -57,10 +57,8 @@ function handleSubmit(e){
     }catch{
     }
   }
-
   createUser()
 }
-
 
 
 function countPercent(){
