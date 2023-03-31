@@ -5,6 +5,7 @@ import BannerThree from '../components/Banners/BannerThree'
 import BannerFour from '../components/Banners/BannerFour'
 import BannerFive from '../components/Banners/BannerFive'
 import BannerSix from '../components/Banners/BannerSix'
+import BannerSeven from '../components/Banners/BannerSeven'
 
 function Home() {
   return (
@@ -14,7 +15,9 @@ function Home() {
         <BannerThree/>
         <BannerFour/>
         <BannerFive/>
+        <BannerSeven/>
         <BannerSix/>
+
     
     </>
   )

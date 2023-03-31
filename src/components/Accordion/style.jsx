@@ -15,7 +15,7 @@ export const StyledAccord = styled.div`
         justify-content: space-between;
         padding: 0 15px;
 
-        text-shadow: 1px 1px 1px black;
+        text-shadow: 1px 1px 1px #00000067;
         cursor: pointer;
         &:hover{
             background-color: #b3ce7e;

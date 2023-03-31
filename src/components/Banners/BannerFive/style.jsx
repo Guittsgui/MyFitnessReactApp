@@ -46,7 +46,7 @@ export const StyledContainer = styled.div`
     }
 
     button{
-        width: 100px;
+        width: 140px;
         height: 40px;
         border-radius: 15px;
         border-color: transparent;
