@@ -1,11 +1,13 @@
 import * as C from './style'
+import {userReports} from './../../../utils/userReports'
+import UserRelate from './../../UserRelate'
 
 const BannerSeven = () =>{
 
     return <C.StyledBody>
-        <div>
-            
-        </div>
+        <C.Container>
+         
+        </C.Container>
     </C.StyledBody>
 
 }
