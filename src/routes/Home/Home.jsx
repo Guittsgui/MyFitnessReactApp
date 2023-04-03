@@ -6,6 +6,8 @@ import {StyledInput} from './../../components/Input'
 import {useState} from 'react'
 import {isEmailValid} from './../../utils/isEmailValid'
 import emailjs from '@emailjs/browser'
+import Accordion from '../../components/Accordion';
+import { questList } from "./../../utils/questList"
 
 
 function Home() {
@@ -50,9 +52,6 @@ function Home() {
       return newData
     }) 
   }
-
-
-
 
   return (
     <>
@@ -169,6 +168,13 @@ function Home() {
                 {error && <p> {error} </p>}
             </div>
           </S.BannerSix>
+
+          <S.BannerEight>
+            <h1> FAQ's </h1>
+            {questList.map((item) =>(
+                <Accordion key={item.id} item={item}/>
+            ))}
+          </S.BannerEight>
 
     
     </>
