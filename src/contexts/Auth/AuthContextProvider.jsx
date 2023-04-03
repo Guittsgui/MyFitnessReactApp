@@ -4,9 +4,7 @@ import { api } from "../../api"
 
 export const AuthContextProvider = ({children}) =>{
 
-    const [user, setUser] = useState()
-    const vodka = "smirnoff"
-
+    const [user, setUser] = useState(null)
 
     const signIn = async (loginData) =>{
         const json = await api.validateUserLogin(loginData)
@@ -14,9 +12,8 @@ export const AuthContextProvider = ({children}) =>{
         if( token && hasUser){
             setUser(hasUser)
             return true
-        }else{
-            return false
         }
+        return false    
     }
 
     const signOut = () => {
@@ -24,7 +21,7 @@ export const AuthContextProvider = ({children}) =>{
     }
 
     return(
-        <AuthContext.Provider value={{vodka, user, signIn, signOut}}>
+        <AuthContext.Provider value={{user, setUser, signIn, signOut}}>
             {children}
         </AuthContext.Provider>
     )

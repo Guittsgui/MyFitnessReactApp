@@ -10,6 +10,10 @@ import UserHome from './routes/UserHome'
 import {createBrowserRouter,RouterProvider}  from 'react-router-dom'
 import ImcCalculator from './routes/ImcCalculator'
 import {AuthContextProvider} from './contexts/Auth/AuthContextProvider'
+import MyDiet from './routes/MyDiet'
+import MyWorkout from './routes/MyWorkout'
+import FoodBlog from './routes/FoodBlog'
+import FitnessBlog from './routes/FitnessBlog'
 
 const router = createBrowserRouter([
   {
@@ -36,6 +40,22 @@ const router = createBrowserRouter([
       {
         path: 'imccalculator',
         element: <ImcCalculator/>
+      },
+      {
+        path: 'mydiet',
+        element:<MyDiet/>
+      },
+      {
+        path: 'myworkout',
+        element: <MyWorkout/>
+      },
+      {
+        path: 'foodblog',
+        element: <FoodBlog/>
+      },
+      {
+        path: 'fitnessblog',
+        element: <FitnessBlog/>
       }
     ]
 
