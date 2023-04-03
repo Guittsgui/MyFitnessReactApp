@@ -1,33 +1,45 @@
 export const imcDatas = [
     {
-        imc: 18.5,
+        imc: [0, 18.5],
         class: "Magreza",
-        obesidade: "Grau Zero"
+        obesidade: "Grau Zero",
+        yourImc: 0
     },
     {
-        imc: 24.9,
+        imc: [18.6 , 24.9],
         class: "normal",
-        obesidade: "Grau Zero"
+        obesidade: "Grau Zero",
+        yourImc: 0
     },
     {
-        imc: 29.9,
+        imc: [25, 29.9],
         class: "Sobrepeso",
-        obesidade: "Grau Um"
+        obesidade: "Grau Um",
+        yourImc: 0
     },
     {
-        imc: 39.9,
+        imc: [30, 39.9],
         class: "Obesidade",
-        obesidade: "Grau Dois"
+        obesidade: "Grau Dois",
+        yourImc: 0
     },
     {
-        imc: 40,
+        imc: [40,1000],
         class: "Obesidade Grave",
-        obesidade: "Grau Três"
+        obesidade: "Grau Três",
+        yourImc: 0
     }
 ]
 
 
 export const calculaImc = (height, weight) => {
     const IMC = weight / (height * height)
-    return IMC
+
+    for ( let i in imcDatas){
+        if(IMC >= imcDatas[i].imc[0] && IMC <= imcDatas[i].imc[1]){
+          imcDatas[i].yourImc = IMC
+          return imcDatas[i]          
+        }
+    }
+    return null
 }
