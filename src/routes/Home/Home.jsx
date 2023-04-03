@@ -161,13 +161,14 @@ function Home() {
                   value={data.title}/>
 
                 <textarea  name='message' 
-                placeholder='Digite seu Email'
+                placeholder='Digite sua Mensagem'
                  onChange={handleChangeFields}
                 value={data.message}/> 
                 <button onClick={handleSubmitContact} > Enviar </button>
                 {error && <p> {error} </p>}
             </div>
           </S.BannerSix>
+
 
           <S.BannerEight>
             <h1> FAQ's </h1>
