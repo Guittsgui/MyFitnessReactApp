@@ -2,14 +2,17 @@ import * as C from './styled'
 import { StyledFormContainer } from '../../components/FormContainer/styled'
 import {StyledInput} from './../../components/Input'
 import {StyledButton} from './../../components/Button'
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import {isEmailValid} from './../../utils/isEmailValid'
 import {api} from '../../api'
 import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../contexts/Auth/AuthContext'
+
+
 
 function Login() {
   const navigate = useNavigate()
-
+  const auth = useContext(AuthContext)
   const [error, setError] = useState('')
   const [ data, setData] = useState({
     email: '',
@@ -25,7 +28,7 @@ function Login() {
     })
   }
 
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault()
     if(!isEmailValid(data.email)){
       setError('Informe um Email válido')
@@ -35,21 +38,13 @@ function Login() {
       email: data.email,
       password: data.password
     } 
-    async function verifyLogin(){
-      try{
-        const [json,response] = await api.validateUserLogin(loginInfo)
-        console.log(json)
-        if(response.status === 200){
-          navigate('/home')
-        }else{
-          setError(json.msg)
-        }
-      }catch{
-        setError('Ops, Algo deu Errado')
-      }
+    const testLogin = await auth.signIn(loginInfo)
+    if(testLogin){
+      navigate('/home')
+    }else{
+      setError('Dados Inválidos.')
     }
-    verifyLogin()
-  }
+   }
 
   return (
     

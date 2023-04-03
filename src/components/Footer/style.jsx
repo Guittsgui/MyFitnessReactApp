@@ -11,6 +11,7 @@ export const StyledFooter = styled.footer`
     ul{
         display: flex;
         gap: 40px;
+        margin-top: 15px;
     }
     li{
         list-style: none;

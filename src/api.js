@@ -16,16 +16,18 @@ export const api = {
           return [json, response]
     },
 
-    validateUserLogin: async(user)=>{
+
+
+    validateUserLogin: async(loginData)=>{
       const response = await fetch('http://localhost:3000/login',{
         method:'POST',
         headers:{
           'content-type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(loginData)
       })
       const json = await response.json()
-      return [json,response]
+      return json
     }
 
 
