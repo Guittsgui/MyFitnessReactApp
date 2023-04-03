@@ -8,6 +8,7 @@ import Register from './routes/Register'
 import Error from './routes/Error'
 import UserHome from './routes/UserHome'
 import {createBrowserRouter,RouterProvider}  from 'react-router-dom'
+import ImcCalculator from './routes/ImcCalculator'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'home',
         element: <UserHome/>
+      },
+      {
+        path: 'imccalculator',
+        element: <ImcCalculator/>
       }
     ]
 
