@@ -362,6 +362,18 @@ export const BannerSix = styled.section`
         font-size: 14px;
     }
 
+    @media (max-width: 500px){
+        .emailContainer{
+            width:380px ;
+        }
+        textarea{
+            width: 350px;
+        }
+        h2{
+            font-size: 30px;
+        }
+    }
+
 `;
 
 
