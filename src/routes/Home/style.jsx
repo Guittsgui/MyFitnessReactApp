@@ -363,3 +363,8 @@ export const BannerSix = styled.section`
     }
 
 `;
+
+
+export const BannerEight = styled.section`
+    
+`;

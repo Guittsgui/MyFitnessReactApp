@@ -5,6 +5,7 @@ import{CgGym} from "react-icons/cg"
 import {StyledInput} from './../../components/Input'
 import {useState} from 'react'
 import {isEmailValid} from './../../utils/isEmailValid'
+import emailjs from '@emailjs/browser'
 
 
 function Home() {
@@ -18,15 +19,26 @@ function Home() {
   const [data, setData] = useState(fields)
 
   function handleSubmitContact(){
-    if(data.email ){
-      setError('Preencha todos os Campos')
+    if(!data.email || !data.message || !data.title){
+      setError ('Preencha todos os campos')
       return
     }
     if(!isEmailValid(data.email)){
       setError('Insira um Email Válido')
       return
     }
-    alert('oi')
+    const templateParams = {
+      from_name: data.email,
+      about_message: data.title,
+      message: data.message
+    }
+
+    emailjs.send("service_l3mx47x","template_a41oeyd", templateParams, "Chif-m8Hf6Un93o0x")
+    .then(alert('email Enviado'))
+    .catch()
+
+    setData(fields)
+    
   }
 
 
@@ -37,8 +49,6 @@ function Home() {
       const newData = {...prev, [name]: value}
       return newData
     }) 
-
-    console.log(data)
   }
 
 
@@ -156,7 +166,7 @@ function Home() {
                  onChange={handleChangeFields}
                 value={data.message}/> 
                 <button onClick={handleSubmitContact} > Enviar </button>
-                {error && <p> Preencha todos os Campos </p>}
+                {error && <p> {error} </p>}
             </div>
           </S.BannerSix>
 
