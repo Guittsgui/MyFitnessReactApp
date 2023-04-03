@@ -6,13 +6,12 @@ export const AuthContextProvider = ({children}) =>{
 
     const [user, setUser] = useState(null)
 
-    
+
     const signIn = async (loginData) =>{
         const json = await api.validateUserLogin(loginData)
         const {token,hasUser} = json
         if( token && hasUser){
             setUser(hasUser)
-            console.log(hasUser)
             return true
         }else{
             return false
@@ -20,7 +19,7 @@ export const AuthContextProvider = ({children}) =>{
     }
 
     const signOut = () => {
-
+        setUser(null)
     }
 
     return(
