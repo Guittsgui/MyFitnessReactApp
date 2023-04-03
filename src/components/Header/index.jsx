@@ -8,13 +8,15 @@ const Header = () =>{
     const auth = useContext(AuthContext)
 
     function handleLogout(){
+        console.log
         auth.signOut()
     }
 
 
     return <StyledHeader>
             <div className="logo">
-                <Link to="/"> <h2> MyFitnessApp</h2></Link>        
+                {auth.user && <Link to="/home"> <h2> MyFitnessApp</h2></Link> }
+                {!auth.user && <Link to="/"> <h2> MyFitnessApp</h2></Link> }        
             </div>
   
             <nav>

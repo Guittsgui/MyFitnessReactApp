@@ -4,7 +4,8 @@ import { api } from "../../api"
 
 export const AuthContextProvider = ({children}) =>{
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState()
+    const vodka = "smirnoff"
 
 
     const signIn = async (loginData) =>{
@@ -23,7 +24,7 @@ export const AuthContextProvider = ({children}) =>{
     }
 
     return(
-        <AuthContext.Provider value={{user, signIn, signOut}}>
+        <AuthContext.Provider value={{vodka, user, signIn, signOut}}>
             {children}
         </AuthContext.Provider>
     )

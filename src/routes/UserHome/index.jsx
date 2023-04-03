@@ -9,7 +9,9 @@ const UserHome = () => {
 
     return <StyledBody>
 
-        <h1></h1>
+        
+        
+
 
     </StyledBody>
 }
