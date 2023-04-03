@@ -355,5 +355,11 @@ export const BannerSix = styled.section`
             color: white;
         }
     }
+    p{
+        color: red;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
 
 `;

@@ -4,18 +4,44 @@ import {AiOutlineUserAdd, AiOutlineOrderedList, AiOutlineWhatsApp} from "react-i
 import{CgGym} from "react-icons/cg"
 import {StyledInput} from './../../components/Input'
 import {useState} from 'react'
+import {isEmailValid} from './../../utils/isEmailValid'
 
 
 function Home() {
 
-  const [data, setData] = useState([])
+  const fields = {
+    email: '',
+    title: '',
+    message: ''
+  }
+  const [error,setError] = useState('')
+  const [data, setData] = useState(fields)
 
   function handleSubmitContact(){
+    if(data.email ){
+      setError('Preencha todos os Campos')
+      return
+    }
+    if(!isEmailValid(data.email)){
+      setError('Insira um Email Válido')
+      return
+    }
     alert('oi')
   }
-  function handleChangeFields(){
 
+
+  function handleChangeFields(e){
+    setError('')
+    const {name, value} = e.target
+    setData((prev) => {
+      const newData = {...prev, [name]: value}
+      return newData
+    }) 
+
+    console.log(data)
   }
+
+
 
 
   return (
@@ -111,13 +137,26 @@ function Home() {
           </S.BannerFive>
 
           <S.BannerSix>
-            <h2> Ainda não é membro ? <br/> Fale conosco por Aqui</h2>
-            
+            <h2> Ainda não é membro ? <br/> Fale conosco por Aqui</h2>          
             <div className="emailContainer">               
-                <input type="email" placeholder='Informe seu Email' />
-                <input type="text" placeholder='Sobre o que é sua mensagem ?'/>
-                <textarea placeholder='Digite seu Email'/> 
-                <button onClick={handleSubmitContact}> Enviar </button>
+                <input type="email" 
+                name='email' 
+                placeholder='Informe seu Email' 
+                onChange={handleChangeFields} 
+                value={data.email}/>
+
+                <input type="text"
+                 name='title'
+                  placeholder='Sobre o que é sua mensagem ?' 
+                  onChange={handleChangeFields} 
+                  value={data.title}/>
+
+                <textarea  name='message' 
+                placeholder='Digite seu Email'
+                 onChange={handleChangeFields}
+                value={data.message}/> 
+                <button onClick={handleSubmitContact} > Enviar </button>
+                {error && <p> Preencha todos os Campos </p>}
             </div>
           </S.BannerSix>
 
