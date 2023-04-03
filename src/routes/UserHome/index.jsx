@@ -1,7 +1,7 @@
 import { StyledBody } from "./style"
 import { AuthContext } from "../../contexts/Auth/AuthContext"
 import { useContext } from "react"
-import { AuthContextProvider } from "../../contexts/Auth/AuthContextProvider"
+
 
 const UserHome = () => {
 
@@ -9,7 +9,7 @@ const UserHome = () => {
 
     return <StyledBody>
 
-        <h1> Olá Usuário {auth.user.name} </h1>
+        <h1></h1>
 
     </StyledBody>
 }

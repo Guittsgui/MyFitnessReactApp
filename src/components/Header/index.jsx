@@ -1,7 +1,16 @@
 import { StyledHeader } from "./style" 
 import { NavLink, Link } from "react-router-dom"
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/Auth/AuthContext"
 
 const Header = () =>{
+
+    const auth = useContext(AuthContext)
+
+    function handleLogout(){
+        auth.signOut()
+    }
+
 
     return <StyledHeader>
             <div className="logo">
@@ -9,12 +18,19 @@ const Header = () =>{
             </div>
   
             <nav>
-                <NavLink to="/login">
-                     Entrar 
-                </NavLink>
-                <NavLink to="/register"> 
+                {!auth.user &&
+                  <>
+                    <NavLink to="/login">
+                        Entrar 
+                    </NavLink>
+                    <NavLink to="/register"> 
                         Registrar 
-                </NavLink>   
+                    </NavLink>      
+                  </> 
+                }
+                {auth.user &&
+                    <NavLink to="/" onClick={handleLogout}> Logout </NavLink>
+                }             
             </nav>   
     
     </StyledHeader>
