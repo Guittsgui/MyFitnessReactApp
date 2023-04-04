@@ -7,18 +7,9 @@ const UserHome = () => {
 
     const auth = useContext(AuthContext)
    
-    function changeLoginName(){
-
-        auth.setUser((prev) => {
-            const newUser = {...prev, name: "tobias"}
-            return newUser
-            
-        })
-    }
 
     return <StyledBody>
-        {auth.user.name}
-        <button onClick={changeLoginName}> change name</button>
+        {auth.user.isadm}
     </StyledBody>
 }
 
