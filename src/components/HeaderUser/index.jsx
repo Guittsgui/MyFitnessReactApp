@@ -16,7 +16,12 @@ const HeaderUser = () => {
             </>
         }
         {auth.user.isadm === 1 &&
-            <NavLink to="/admallusers"> Buscar Alunos </NavLink>
+            <>
+                <NavLink to="/admallusers"> Buscar Alunos </NavLink>
+                <NavLink> + Blog Fitness </NavLink>
+                <NavLink> + Blog Receita </NavLink>
+                <NavLink>  Prog Mensal</NavLink>
+            </>
         }
 
     </S.StyledHeaderUser>
