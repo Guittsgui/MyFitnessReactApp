@@ -9,10 +9,7 @@ import {api} from './../../api'
 const AdmAllUsers = () => {
     const [name, setName] = useState('')
     const [listUsers , setListUsers] = useState([])
-
-    function handleSearch(e){
-        setName(e.target.value)
-    }
+    let filterList = listUsers.filter((user) => user.name.includes(name))
 
     useEffect(()=>{
         const loadUsers = async () => {
@@ -29,14 +26,14 @@ const AdmAllUsers = () => {
             <S.searchContainer>
                 <StyledInput placeholder='Informe o nome do Aluno: ' 
                 value={name} 
-                onChange={handleSearch}/>
+                onChange={(e)=>setName(e.target.value)}/>
                 <button> <AiOutlineSearch size={30}/> </button>
             </S.searchContainer>
         </S.Nav>
 
         <S.usersContainer>
-            { listUsers.map((user)=> (
-                <UserBox user={user} key={user.id}/>
+            {filterList.map((user)=> (
+                <UserBox key={user.id} user={user}/>
             ))}
         </S.usersContainer>
     </S.Body>
