@@ -11,7 +11,6 @@ export const Body = styled.div`
 export const container = styled.div`
     width: 800px;
     height: 500px;
-    background-color: lightblue;
     display: flex;
     box-shadow: 2px 2px 2px #00000099;
 `;
@@ -28,8 +27,7 @@ export const textContainer = styled.div`
         margin-bottom: 15px;
         border-bottom: 1px solid darkgray;
         padding-bottom: 5px;
-    }
-    
+    }  
 `;
 
 export const leftSide = styled.div`
@@ -45,6 +43,6 @@ export const leftSide = styled.div`
 
 export const rightSide = styled.div`
     flex: 1;
-    background-color: #e7e5e5;
+    background-color: #f5f4f4;
     padding: 20px;
 `;
