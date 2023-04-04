@@ -21,33 +21,28 @@ const AdmEditUser = () => {
 
     return <S.Body>
         <S.container>
-                <Link to="/admallusers"> Voltar </Link>
+                <Link to="/admallusers" className='return'> Voltar </Link>
                 <div className="infoContainer">
                     <div>
                         <h3> Nome:</h3>
                         <p> {user.name} </p>
                     </div>
-
                     <div>  
                         <h3> Email:</h3>
                         <p> {user.email} </p>
                     </div>
-
                     <div>
                         <h3> Sexo: </h3>
                         <p> Feminino</p>
                     </div>
-
                     <div>
                         <h3> Altura: </h3>
                         <p> 1.70 m</p>
                     </div>  
-
                     <div>
                         <h3> Peso Atual: </h3>
                         <p> 70 kg</p>
-                    </div>
-                    
+                    </div>                  
                     <div>
                         <h3> Objetivo: </h3>
                         <p> Emagrecimento </p>
@@ -55,9 +50,9 @@ const AdmEditUser = () => {
                 </div>
 
                 <S.nav>
-                    <button className='dieta'>Editar Dieta <MdFastfood size={30}/></button>
-                    <button className='treino'>Editar Série <CgGym size={30}/></button>
-                    <button className='remover'>Remover Usuário <CiCircleRemove size={30}/> </button>
+                    <Link to={`/adddiet/${user.id}`} className='dieta'>Editar Dieta <MdFastfood size={30}/></Link>
+                    <Link to={`/addworkout/${user.id}`} className='treino'>Editar Série <CgGym size={30}/></Link>
+                    <Link className='remover'>Remover Usuário <CiCircleRemove size={30}/> </Link>
                 </S.nav>
         </S.container>
     </S.Body>

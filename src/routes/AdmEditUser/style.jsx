@@ -6,24 +6,20 @@ export const Body = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    button{
-        width: 150px;
+    a{
+
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 5px;
         font-size: 14px;
         cursor: pointer;
-        color: white;
-    }
-    a{
         color: red;
         text-decoration: none;
-        letter-spacing: 2px;
         &:hover{
-            color: #f3a6a6;
+            color: #ff8b8b;
         }
     }
+ 
 `;
 
 export const container = styled.div`
@@ -55,23 +51,31 @@ export const container = styled.div`
 export const nav = styled.div`
     display: flex;
     gap: 20px;
+    a{
+        padding: 5px;
+        color: white;
+        width: 150px;
+    }
 
     .dieta{
         background-color: #0c5c0c;
         &:hover{
             background-color: #3fb93f;
+            color: white;
         }
     }
     .treino{
         background-color: #279191;
         &:hover{
             background-color: #24f3f3;
+            color: white;
         }
     }
     .remover{
         background-color: #742020;
         &:hover{
             background-color: #cc0d0d;
+            color: white;
         }
     }
 

@@ -27,7 +27,6 @@ const AdmAllUsers = () => {
                 onChange={(e)=>setName(e.target.value)}/>
             </S.searchContainer>
         </S.Nav>
-
         <S.usersContainer>
             {filterList.map((user)=> (
                 <UserBox key={user.id} user={user}/>

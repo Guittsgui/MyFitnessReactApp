@@ -16,6 +16,8 @@ import FoodBlog from './routes/FoodBlog'
 import FitnessBlog from './routes/FitnessBlog'
 import AdmAllUsers from './routes/AdmAllUsers'
 import AdmEditUser from './routes/AdmEditUser'
+import AdmAddWorkout from './routes/AdmAddWorkout'
+import AdmAddDiet from './routes/AdmAddDiet'
 
 
 const router = createBrowserRouter([
@@ -67,6 +69,14 @@ const router = createBrowserRouter([
       {
         path: 'admedituser/:id',
         element: <AdmEditUser/>
+      },
+      {
+        path: 'addworkout/:id',
+        element: <AdmAddWorkout/>
+      },
+      {
+        path: 'adddiet/:id',
+        element: <AdmAddDiet/>
       }
     ]
 
