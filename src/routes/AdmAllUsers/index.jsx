@@ -19,7 +19,6 @@ const AdmAllUsers = () => {
         loadUsers()
     },[])
 
-
     return <S.Body>
         <S.Nav>
             <h3> Search Bar : </h3>
