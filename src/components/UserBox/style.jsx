@@ -11,8 +11,8 @@ export const container = styled.div`
     box-shadow: 2px 2px 2px #0000007a;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 80px;
+    justify-content: space-around;
+ 
 
     button{
         background-color: transparent;

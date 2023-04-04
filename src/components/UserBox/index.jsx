@@ -2,10 +2,10 @@ import * as S from './style'
 import {CgGym} from 'react-icons/cg'
 import{AiFillEdit} from 'react-icons/ai'
 
-const UserBox = () =>{
+const UserBox = ({user}) =>{
     return <S.container>
         
-    <p> Nome: Guilherme da Silva </p>
+    <p> Nome: {user.name} </p>
     <button> <AiFillEdit size={30}/> </button>
 
     </S.container>

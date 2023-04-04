@@ -1,7 +1,10 @@
 export const api = {
 
-    getAllUsers: ()=>{
+    getAllUsers: async ()=>{
 
+      const response = await fetch ('http://localhost:3000/')
+      const json = await response.json()
+      return json
     },
 
     addNewUser: async (user)=>{
