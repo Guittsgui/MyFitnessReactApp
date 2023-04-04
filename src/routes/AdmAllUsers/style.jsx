@@ -13,7 +13,7 @@ export const Nav = styled.nav`
     height: 100px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px #00000090;
-    background-color: lightgreen;
+    background-color: #b6ffb6;
     margin-top: 40px;
     display: flex;
     align-items: center;

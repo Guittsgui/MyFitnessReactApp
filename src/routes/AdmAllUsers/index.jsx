@@ -1,6 +1,5 @@
 import * as S from './style'
 import {StyledInput} from './../../components/Input'
-import {AiOutlineSearch} from 'react-icons/ai'
 import UserBox from './../../components/UserBox'
 import { useEffect , useState} from 'react'
 import {api} from './../../api'
@@ -26,7 +25,6 @@ const AdmAllUsers = () => {
                 <StyledInput placeholder='Informe o nome do Aluno: ' 
                 value={name} 
                 onChange={(e)=>setName(e.target.value)}/>
-                <button> <AiOutlineSearch size={30}/> </button>
             </S.searchContainer>
         </S.Nav>
 
