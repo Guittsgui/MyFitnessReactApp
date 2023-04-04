@@ -5,7 +5,7 @@ import{AiFillEdit} from 'react-icons/ai'
 const UserBox = ({user}) =>{
     return <S.container>
         
-    <p> Nome: {user.name} </p>
+    <p> <span>Nome: </span>{user.name} </p>
     <button> <AiFillEdit size={30}/> </button>
 
     </S.container>

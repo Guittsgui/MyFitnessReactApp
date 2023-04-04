@@ -12,13 +12,7 @@ const AdmAllUsers = () => {
 
     function handleSearch(e){
         setName(e.target.value)
-        let newList = listUsers.filter((user) => user.name.includes(name))
-        setListUsers(newList)
-
     }
-
-
-
 
     useEffect(()=>{
         const loadUsers = async () => {
@@ -39,9 +33,12 @@ const AdmAllUsers = () => {
                 <button> <AiOutlineSearch size={30}/> </button>
             </S.searchContainer>
         </S.Nav>
-        { listUsers.map((user)=> (
-            <UserBox user={user} key={user.id}/>
-        ))}
+
+        <S.usersContainer>
+            { listUsers.map((user)=> (
+                <UserBox user={user} key={user.id}/>
+            ))}
+        </S.usersContainer>
     </S.Body>
 
 }

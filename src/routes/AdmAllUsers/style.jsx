@@ -14,7 +14,7 @@ export const Nav = styled.nav`
     border-radius: 20px;
     box-shadow: 2px 2px 2px #00000090;
     background-color: lightgreen;
-    margin: 40px 0px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -42,15 +42,9 @@ export const searchContainer = styled.div`
     }
 `;
 
-export const filterContainer = styled.div`
-    display: flex;
-    ul{
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        list-style: none;
-    }
-
+export const usersContainer = styled.div`
+    margin: 50px 0px;
 `;
+
 
 
