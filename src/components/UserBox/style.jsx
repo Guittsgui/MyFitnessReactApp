@@ -25,7 +25,7 @@ export const container = styled.div`
         color: ${(props) => (props.gender === 'male' ? "darkblue" : "#b84054")};
         cursor: pointer;
         &:hover{
-            color: darkgreen;
+            color: ${(props) => (props.gender === 'male' ? "#5ba7e6" : "#b8818a")};
         }
     }
 

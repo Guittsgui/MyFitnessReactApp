@@ -10,7 +10,7 @@ const UserBox = ({user}) =>{
 
     {user.gender === 'male' ? <FaMale size={30}/> : <FaFemale size={30}/>}    
     <p> <span>Nome: </span>{user.name} </p>
-    <Link to={`/admedituser/${user.id}`}> <AiFillEdit size={30}/> </Link>
+    <Link to={`/admedituser/${user.id}`}> <AiFillEdit size={30}/></Link>
 
     </S.container>
 }
