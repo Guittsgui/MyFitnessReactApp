@@ -34,6 +34,15 @@ export const StyledHeader = styled.header`
         border-color: darkgreen;
     }
 
+    .logout{
+        color: red;
+        border-color: red;
+        &:hover{
+            color: #f36c6c;
+            border-color:#f36c6c ;
+        }
+    }
+
     @media (max-width: 500px){
         .logo{
             margin-left: 10px;

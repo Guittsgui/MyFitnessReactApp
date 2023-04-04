@@ -31,7 +31,9 @@ const Header = () =>{
                   </> 
                 }
                 {auth.user &&
-                    <NavLink to="/" onClick={handleLogout}> Logout </NavLink>
+                    <NavLink to="/" onClick={handleLogout} className="logout"> 
+                        Logout 
+                    </NavLink>
                 }             
             </nav>   
     
