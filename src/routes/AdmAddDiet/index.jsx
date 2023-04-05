@@ -6,11 +6,13 @@ import {StyledButton} from './../../components/Button'
 import {StyledInput} from '../../components/Input'
 
 
-const AdmAddDiet = () => {
 
+const AdmAddDiet = () => {
+    const [counter,setCounter] = useState(0)
     const initial = {
         title: '',
-        diet: ''
+        diet: '',
+        dateExpires: ''
     }
     const {id} = useParams()
     const [user,setUser] = useState('')
@@ -24,6 +26,7 @@ const AdmAddDiet = () => {
             const newData = {...prev,[name]: value}
             return newData
         })
+        setCounter(data.diet.length)
 
 
     }
@@ -38,13 +41,11 @@ const AdmAddDiet = () => {
         const diet = {
             title: data.title,
             diet: data.diet,
-            date: date
+            dateExpires: data.dateExpires,
+            userId: user.id
         }
         console.log(diet)
     }
-
-    const date = new Date()
- 
 
     useEffect(()=> {
         const loadUser = async () =>{
@@ -69,10 +70,17 @@ const AdmAddDiet = () => {
 
                 <textarea name="diet" placeholder='Digite aqui a Dieta.' 
                 value={data.diet}
-                 onChange={handleChange}/>
-
-                <p> Dieta feita em : 0{date.getMonth() + 1} / {date.getFullYear()}</p>
-
+                 onChange={handleChange}
+                 maxLength="1000"/>
+                <small> {counter} / 1000 caracteres.</small>             
+                <div className='datacontainer'>
+                    <p> {user.name} deve seguir a dieta até:  </p>
+                    <input className='datefield' 
+                    type="date" 
+                    name='dateExpires' 
+                    value={data.dateExpires} 
+                    onChange={handleChange}/>
+                </div>
                 <StyledButton onClick={handleSubmit}> Salvar Dieta </StyledButton>
 
             </S.container>

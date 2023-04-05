@@ -18,16 +18,46 @@ export const container = styled.div`
     border-radius: 20px;
     box-shadow: 2px 2px 2px #0000007f;
     margin: 20px;
+    padding: 10px;
 
     p{
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     textarea{
         width: 380px;
         height: 400px;
         outline: none;
         padding: 10px;
-        margin: 20px;
+        margin-top: 20px;
+        border-radius: 15px;
+    }
+    small{
+        margin-bottom: 20px;
+    }
+    .datacontainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        gap: 10px;
+        p{
+            margin-bottom: 0px;
+        }
+        color: darkgreen;
+        font-weight: bolder;
+    }
+
+    .datefield{
+        width: 250px;
+        text-align: center;
+        height: 30px;
+        border-radius: 15px;
+        border-color: transparent;
+        outline: none;
+        color: darkgreen;
+        font-weight: bolder;
+        letter-spacing: 2px;
     }
 `;
 
