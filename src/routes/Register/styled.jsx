@@ -13,7 +13,10 @@ export const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 25px
+    gap: 25px;
+    span{
+        margin: 10px;
+    }
 `;
 
 export const StyledPercentContainer = styled.div`

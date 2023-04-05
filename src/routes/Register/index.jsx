@@ -19,7 +19,8 @@ const [fieldsData, setFieldsData ] = useState({
   fullname: '',
   email: '',
   password: '',
-  confirmPassword: ''
+  confirmPassword: '',
+  gender: ''
 })
 
 function handleChange(e){
@@ -55,7 +56,6 @@ function handleSubmit(e){
       const [json,response] = await api.addNewUser(fieldsData)
       if(response.status === 201){
         setAceptMsg(json.msg)
-        console.log(json.msg)
       }else{
         setErroMsg(json.msg)
       }
@@ -68,13 +68,14 @@ function handleSubmit(e){
 
   function countPercent(){
     let percent = 0
-    const ammountAdded = 25
+    const ammountAdded = 20
     if(fieldsData.fullname){
       percent += ammountAdded
     }
     if(fieldsData.email) percent += ammountAdded
     if(fieldsData.password) percent += ammountAdded
     if(fieldsData.confirmPassword) percent += ammountAdded
+    if(fieldsData.gender) percent += ammountAdded
     return percent
   }
 
@@ -111,7 +112,13 @@ function handleSubmit(e){
             <StyledInput type="password" placeholder='Repita sua Senha:'
              value={fieldsData.confirmPassword} name="confirmPassword"
              onChange={handleChange}/>
+            
+            <div>
+              <span>Homem</span> <input type="radio" name='gender' value="male" onChange={handleChange}/> 
 
+              <span>Mulher</span> <input type="radio" name='gender' value="female" onChange={handleChange}/>  
+            </div>
+             
             <StyledButton onClick={handleSubmit} disabled={countPercent() != 100}>
                Registre-se 
             </StyledButton>
