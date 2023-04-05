@@ -19,7 +19,9 @@ export const container = styled.div`
     box-shadow: 2px 2px 2px #0000007f;
     margin: 20px;
     padding: 10px;
-
+    h2{
+        color: green;
+    }
     p{
         margin-bottom: 20px;
     }
@@ -70,4 +72,32 @@ export const header = styled.header`
         font-size: 20px;
     }
     margin: 20px 0px;
+`;
+
+export const acceptBox = styled.div`
+    color: green;
+    font-weight: bolder;
+    margin-top: 49%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    h2{
+        border-bottom: 1px solid green;
+        padding-bottom: 5px;
+    }
+    a{
+        color: yellowgreen;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        border: 2px solid yellowgreen;
+        padding: 10px;
+        &:hover{
+            color: #c7eb7f;
+            border-color:#c7eb7f;
+        }
+    }
 `;

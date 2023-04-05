@@ -19,8 +19,6 @@ export const api = {
           return [json, response]
     },
 
-
-
     validateUserLogin: async(loginData)=>{
       const response = await fetch('http://localhost:3000/login',{
         method:'POST',
@@ -37,8 +35,18 @@ export const api = {
       const response = await fetch(`http://localhost:3000/user/${id}`)
       const json = await response.json()
       return json
+    },
+
+    addNewDiet: async(diet)=>{
+      const response = await fetch ('http://localhost:3000/diet',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(diet)
+      })
+      const json = await response.json()
+      return json
     }
-
-
 
 }
