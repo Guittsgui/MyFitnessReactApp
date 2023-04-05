@@ -1,8 +1,8 @@
 import * as S from './style'
-import {StyledInput} from './../../components/Input'
-import UserBox from './../../components/UserBox'
+import {StyledInput} from '../../../components/Input'
+import UserBox from '../../../components/UserBox'
 import { useEffect , useState} from 'react'
-import {api} from './../../api'
+import {api} from '../../../api'
 
 
 const AdmAllUsers = () => {

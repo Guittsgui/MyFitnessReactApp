@@ -1,7 +1,7 @@
 import * as S from './style'
 import { useParams } from 'react-router-dom'
 import { useState , useEffect } from 'react'
-import {api} from '../../api'
+import {api} from '../../../api'
 
 const AdmAddWorkout = () => {
     

@@ -1,9 +1,9 @@
 import * as S from './style'
-import { api } from '../../api'
+import { api } from '../../../api'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import {StyledButton} from './../../components/Button'
-import {StyledInput} from '../../components/Input'
+import {StyledButton} from '../../../components/Button'
+import {StyledInput} from '../../../components/Input'
 import { Link } from 'react-router-dom'
 
 

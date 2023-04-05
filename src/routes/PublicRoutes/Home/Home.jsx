@@ -2,12 +2,12 @@ import React from 'react'
 import * as S from './style'
 import {AiOutlineUserAdd, AiOutlineOrderedList, AiOutlineWhatsApp} from "react-icons/ai";
 import{CgGym} from "react-icons/cg"
-import {StyledInput} from './../../components/Input'
+import {StyledInput} from '../../../components/Input'
 import {useState} from 'react'
-import {isEmailValid} from './../../utils/isEmailValid'
+import {isEmailValid} from '../../../utils/isEmailValid'
 import emailjs from '@emailjs/browser'
-import Accordion from '../../components/Accordion';
-import { questList } from "./../../utils/questList"
+import Accordion from '../../../components/Accordion';
+import { questList } from "../../../utils/questList"
 
 
 function Home() {

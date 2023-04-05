@@ -1,12 +1,11 @@
 import * as C from './styled'
-import { StyledFormContainer } from '../../components/FormContainer/styled'
-import {StyledInput} from './../../components/Input'
-import {StyledButton} from './../../components/Button'
+import { StyledFormContainer } from '../../../components/FormContainer/styled'
+import {StyledInput} from './../../../components/Input'
+import {StyledButton} from './../../../components/Button'
 import {useContext, useState} from 'react'
-import {isEmailValid} from './../../utils/isEmailValid'
-import {api} from '../../api'
+import {isEmailValid} from './../../../utils/isEmailValid'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../contexts/Auth/AuthContext'
+import { AuthContext } from '../../../contexts/Auth/AuthContext'
 
 
 

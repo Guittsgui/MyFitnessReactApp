@@ -1,8 +1,8 @@
 import * as S from './style'
-import {StyledInput} from './../../components/Input'
-import {StyledButton} from './../../components/Button'
+import {StyledInput} from './../../../components/Input'
+import {StyledButton} from './../../../components/Button'
 import { useState } from 'react'
-import { calculaImc } from '../../utils/imcData'
+import { calculaImc } from '../../../utils/imcData'
 
 const ImcCalculator = () => {
 

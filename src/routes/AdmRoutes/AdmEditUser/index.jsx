@@ -4,7 +4,7 @@ import {CgGym} from 'react-icons/cg'
 import {CiCircleRemove} from 'react-icons/ci'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect , useState} from 'react'
-import { api } from '../../api'
+import { api } from '../../../api'
 
 const AdmEditUser = () => {
     const {id} = useParams()

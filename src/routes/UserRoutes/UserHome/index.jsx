@@ -1,5 +1,5 @@
 import { StyledBody } from "./style"
-import { AuthContext } from "../../contexts/Auth/AuthContext"
+import { AuthContext } from "../../../contexts/Auth/AuthContext"
 import { useContext, useEffect, useState } from "react"
 
 
