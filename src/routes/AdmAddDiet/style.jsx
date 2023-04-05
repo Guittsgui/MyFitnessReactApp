@@ -6,11 +6,10 @@ export const Body = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 30px;
 `;
 
 export const container = styled.div`
-    min-height: 700px;
+    min-height: 650px;
     width: 500px;
     background-color: #e6e6e6;
     display: flex;
@@ -18,7 +17,11 @@ export const container = styled.div`
     align-items: center;
     border-radius: 20px;
     box-shadow: 2px 2px 2px #0000007f;
+    margin: 20px;
 
+    p{
+        margin-bottom: 10px;
+    }
     textarea{
         width: 380px;
         height: 400px;

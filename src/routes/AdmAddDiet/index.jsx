@@ -7,22 +7,49 @@ import {StyledInput} from '../../components/Input'
 
 
 const AdmAddDiet = () => {
+
+    const initial = {
+        title: '',
+        diet: ''
+    }
     const {id} = useParams()
     const [user,setUser] = useState('')
-    const [data, setData] = useState('')
+    const [data, setData] = useState(initial)
+
+ 
 
     function handleChange(e){
-        setData(e.target.value)
+        const {name, value} = e.target
+        setData((prev)=>{
+            const newData = {...prev,[name]: value}
+            return newData
+        })
+
+
     }
+
+
     function handleSubmit(){
-        console.log(data)
+        if(!data.title || !data.diet){
+            alert('preencha os campos')
+            return
+        }
+
+        const diet = {
+            title: data.title,
+            diet: data.diet,
+            date: date
+        }
+        console.log(diet)
     }
+
+    const date = new Date()
+ 
 
     useEffect(()=> {
         const loadUser = async () =>{
             const newUser = await api.getUserByID(id)
             setUser(newUser)
-            console.log(newUser)
         }
         loadUser()    
     },[])
@@ -36,9 +63,16 @@ const AdmAddDiet = () => {
                     <p> {user.name}</p>
                 </S.header>
                 <StyledInput placeholder='Título da Dieta Ex: Dieta Emagrecimento'
-                value={data}
-                onChange={handleChange}/>
-                <textarea placeholder='Digite aqui a Dieta.' value={data} onChange={handleChange}/>
+                value={data.title}
+                onChange={handleChange}
+                name="title"/>
+
+                <textarea name="diet" placeholder='Digite aqui a Dieta.' 
+                value={data.diet}
+                 onChange={handleChange}/>
+
+                <p> Dieta feita em : 0{date.getMonth() + 1} / {date.getFullYear()}</p>
+
                 <StyledButton onClick={handleSubmit}> Salvar Dieta </StyledButton>
 
             </S.container>

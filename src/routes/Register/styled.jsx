@@ -63,5 +63,28 @@ export const StyledErrorMsg = styled.p`
     letter-spacing: 2px;
 `;
 
+export const userCreatedMsg = styled.div`
+    color: Green ;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 40%;
+    h1{
+        font-size: 27px;
+        border-bottom: 3px solid green;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    p{
+        margin-bottom: 20px;
+    }
+    span{
+        font-size: 50px;
+        color: yellowgreen;
+        text-shadow: 2px 2px 2px black;
+    }
+    
+`;
+
 
 

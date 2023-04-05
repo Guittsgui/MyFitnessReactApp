@@ -6,20 +6,6 @@ export const Body = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    a{
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 14px;
-        cursor: pointer;
-        color: red;
-        text-decoration: none;
-        &:hover{
-            color: #ff8b8b;
-        }
-    }
- 
 `;
 
 export const container = styled.div`
@@ -33,6 +19,19 @@ export const container = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 50px;
+
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        cursor: pointer;
+        color: red;
+        text-decoration: none;
+        &:hover{
+            color: #ff8b8b;
+        }
+        }
     .infoContainer{
         display: flex;
         flex-direction: column;

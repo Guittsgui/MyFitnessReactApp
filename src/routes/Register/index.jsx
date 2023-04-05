@@ -5,10 +5,14 @@ import {StyledButton} from './../../components/Button'
 import {useState} from 'react'
 import {isEmailValid} from './../../utils/isEmailValid'
 import {api} from './../../api'
+import { useNavigate } from 'react-router-dom'
+
+
 
 
 function Register() {
 
+const navigate = useNavigate()
 const [aceptMsg, setAceptMsg] = useState('')
 const [erroMsg, setErroMsg] = useState('')
 const [fieldsData, setFieldsData ] = useState({
@@ -51,6 +55,7 @@ function handleSubmit(e){
       const [json,response] = await api.addNewUser(fieldsData)
       if(response.status === 201){
         setAceptMsg(json.msg)
+        console.log(json.msg)
       }else{
         setErroMsg(json.msg)
       }
@@ -61,22 +66,26 @@ function handleSubmit(e){
 }
 
 
-function countPercent(){
-  let percent = 0
-  const ammountAdded = 25
-  if(fieldsData.fullname){
-    percent += ammountAdded
+  function countPercent(){
+    let percent = 0
+    const ammountAdded = 25
+    if(fieldsData.fullname){
+      percent += ammountAdded
+    }
+    if(fieldsData.email) percent += ammountAdded
+    if(fieldsData.password) percent += ammountAdded
+    if(fieldsData.confirmPassword) percent += ammountAdded
+    return percent
   }
-  if(fieldsData.email) percent += ammountAdded
-  if(fieldsData.password) percent += ammountAdded
-  if(fieldsData.confirmPassword) percent += ammountAdded
-  return percent
-}
+
+
 
   return (
      <C.StyledBody>
        <StyledFormContainer>
-          <C.StyledPercentContainer>
+          {!aceptMsg &&
+          <>
+            <C.StyledPercentContainer>
             <p> Progresso: {countPercent()} %</p>
             <div className="percentArea">
               <div className="percent" style={{width: `${countPercent()}%`}}>     
@@ -107,7 +116,16 @@ function countPercent(){
                Registre-se 
             </StyledButton>
           </C.StyledForm>
-          {erroMsg && <C.StyledErrorMsg> {erroMsg} </C.StyledErrorMsg>}
+          {erroMsg && <C.StyledErrorMsg> {erroMsg} </C.StyledErrorMsg>}        
+          </>        
+          }
+          {aceptMsg && 
+            <>
+              <C.userCreatedMsg>
+                <h1>{aceptMsg}</h1>
+              </C.userCreatedMsg>
+            </>
+          }
        </StyledFormContainer>
      </C.StyledBody>
   )
