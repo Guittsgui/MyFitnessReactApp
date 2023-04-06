@@ -11,8 +11,8 @@ const HeaderUser = () => {
                 <NavLink to="/imccalculator"> Meu IMC</NavLink>
                 <NavLink to="/mydiet"> Minha Dieta</NavLink>
                 <NavLink to="/myworkout"> Meu Treino </NavLink>
-                <NavLink to="/foodblog"> Blog Receitas </NavLink>
-                <NavLink to="/fitnessblog"> Blog Fitness </NavLink>
+                <NavLink to="/foodblog"> Blogs </NavLink>
+                <NavLink to="/fitnessblog"> News </NavLink>
             </>
         }
         {auth.user.isadm === 1 &&
