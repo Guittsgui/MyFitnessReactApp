@@ -47,6 +47,18 @@ export const api = {
       })
       const json = await response.json()
       return json
+    },
+
+    addNewPost: async(post)=>{
+      const response = await fetch('http://localhost:3000/post',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'Application/json'
+        },
+        body: JSON.stringify(post)
+      })
+      const json = await response.json()
+      return json
     }
 
 }

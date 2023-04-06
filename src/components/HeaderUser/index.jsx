@@ -18,8 +18,7 @@ const HeaderUser = () => {
         {auth.user.isadm === 1 &&
             <>
                 <NavLink to="/admallusers"> Buscar Alunos </NavLink>
-                <NavLink> + Blog Fitness </NavLink>
-                <NavLink> + Blog Receita </NavLink>
+                <NavLink to="/addblogpost"> +Add New Post</NavLink>
                 <NavLink>  Prog Mensal</NavLink>
             </>
         }
