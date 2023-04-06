@@ -84,7 +84,6 @@ const AdmAddBlogPost = () => {
                 </S.acceptMsg>
             }
             
-
         </S.container>
     </S.Body>
 
