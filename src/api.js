@@ -49,6 +49,12 @@ export const api = {
       return json
     },
 
+    getDietByUserId: async(id)=>{
+      const response = await fetch (`http://localhost:3000/diet/${id}`)
+      const json = await response.json()
+      return json
+    },
+
     addNewPost: async(post)=>{
       const response = await fetch('http://localhost:3000/post',{
         method: 'POST',

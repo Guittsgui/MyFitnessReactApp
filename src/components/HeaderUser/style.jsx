@@ -10,7 +10,6 @@ export const StyledHeaderUser = styled.nav`
     font-size: 25px;
     box-shadow: 2px 2px 2px #00000083;
 
-
     a{
         text-decoration: none;
         color: white;
