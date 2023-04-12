@@ -9,7 +9,7 @@ export const Body = styled.div`
 
 export const Menu = styled.nav`
     select{
-        width: 200px;
+        width: 250px;
         height: 30px;
         text-align: center;
         font-size: 18px;

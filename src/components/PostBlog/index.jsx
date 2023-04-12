@@ -10,6 +10,10 @@ const PostBlog = ({post}) => {
             <h1> {post.title} </h1>
             <h2> Tipo: {post.type} </h2>
             <p> Leia mais </p>
+            <div>
+                <small> 22/04/22</small>
+            </div>
+
         </div>
     </S.PostContainer>
 }
