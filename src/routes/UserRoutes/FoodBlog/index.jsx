@@ -1,7 +1,9 @@
 import * as S from './style'
+import PostBlog from '../../../components/PostBlog'
 const FoodBlog = () => {
     return <S.Body>
-        <h1> FOOD BLOG - EM BREVE</h1>
+        <PostBlog/>
+        <PostBlog/>
     </S.Body>
 }
 export default FoodBlog
