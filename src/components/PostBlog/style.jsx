@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
+
 export const PostContainer = styled.div `
     min-height: 150px;
     width: 700px;
-    background-color: #e7e5e5;
-    border-radius: 10px;
+    background: rgb(161,255,201);
+    background: radial-gradient(circle, rgba(161,255,201,1) 0%, rgba(255,255,255,1) 100%);
     box-shadow: 2px 2px 2px #00000075;
     display: flex;
     margin-bottom: 20px;
@@ -25,11 +26,11 @@ export const PostContainer = styled.div `
         gap: 10px;
         p{
             letter-spacing: 2px;
-            color: darkblue;
+            color: darkgreen;
             font-weight: bolder;
             cursor: pointer;
             &:hover{
-                color: blue;
+                color: #2dbe2d;
             }
         }
     }
