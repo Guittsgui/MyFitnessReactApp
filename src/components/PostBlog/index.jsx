@@ -1,14 +1,14 @@
 import * as S from './style'
 
-const PostBlog = () => {
+const PostBlog = ({post}) => {
 
-    return <S.PostContainer>
+    return <S.PostContainer url={post.url}>
         <div className="leftSide">
 
         </div>
         <div className="rightSide">
-            <h1> Título da Mátéria </h1>
-            <h2> Tipo: Receitas </h2>
+            <h1> {post.title} </h1>
+            <h2> Tipo: {post.type} </h2>
             <p> Leia mais </p>
         </div>
     </S.PostContainer>

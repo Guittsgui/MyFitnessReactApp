@@ -65,6 +65,12 @@ export const api = {
       })
       const json = await response.json()
       return json
+    },
+
+    getAllPosts: async()=>{
+      const response = await fetch('http://localhost:3000/post')
+      const json = await response.json()
+      return json
     }
 
 }

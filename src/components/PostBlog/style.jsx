@@ -11,8 +11,8 @@ export const PostContainer = styled.div `
     margin-bottom: 20px;
 
     .leftSide{
-        flex:1;
-        background-image: url('https://www.kaisan.com.br/media/blog/post/5_dicas_de_como_ser_uma_pessoa_fitness.jpg');
+        width: 250px;
+        background-image: url('${(props) => (props.url)}');
         background-position: center;
         background-size: cover;
         
