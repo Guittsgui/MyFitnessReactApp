@@ -63,6 +63,8 @@ export const Container = styled.div`
         .remove{
             display: flex;
             justify-content: end;
+            gap: 20px;
+            align-items: center
         }
     }
 

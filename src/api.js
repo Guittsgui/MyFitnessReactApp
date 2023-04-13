@@ -77,6 +77,24 @@ export const api = {
       const response = await fetch(`http://localhost:3000/post/${id}`)
       const json =  await response.json()
       return json
+    },
+
+    addNewComment: async(comment)=>{
+      const response = await fetch('http://localhost:3000/comment',{
+        method:'POST',
+        headers:{
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(comment)
+      })
+      const json = await response.json()
+      return json
+    },
+    
+    getCommentsByPostId: async(id)=>{
+      const response = await fetch (`http://localhost:3000/comment/${id}`)
+      const json = await response.json()
+      return json
     }
 
 }

@@ -8,6 +8,7 @@ export const Body = styled.div`
     .nocoment{
         color: gray;
         letter-spacing: 1px;
+        margin-bottom: 30px;
     }
     h2{
         margin-bottom: 20px;

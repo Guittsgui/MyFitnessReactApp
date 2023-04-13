@@ -10,6 +10,7 @@ const BlogUniquePost = () => {
         const {id} = useParams()
         const [post, setPost] = useState({})
         const [comments, setComments] = useState([])
+        const [input, setInput] = useState('')
 
         useEffect(()=>{
             async function loadPost(){
@@ -19,6 +20,10 @@ const BlogUniquePost = () => {
 
             loadPost()
         },[])
+        
+        function handleSubmit(){
+           
+        }
 
         return <S.Body>
             <S.Container>
@@ -34,14 +39,17 @@ const BlogUniquePost = () => {
             </S.Container>
 
             <S.AddCommentContainer>
-                <StyledInput placeholder='Adicione seu Comentário...'/>
-                <StyledButton>Adicionar + </StyledButton>
+                <StyledInput placeholder='Adicione seu Comentário...'
+                value={input}
+                onChange={(e)=>(setInput(e.target.value))}/>
+                <StyledButton onClick={handleSubmit}>Adicionar + </StyledButton>
             </S.AddCommentContainer>
 
             <h2> Comentários: </h2>
-            {comments.length === 1 && <p className='nocoment'> Esse post não possui nenhum Comentário.</p>}
-
+            {comments.length === 0 && <p className='nocoment'> Esse post não possui nenhum Comentário.</p>}
             <Comment/>
+
+           
         </S.Body>
 
 }

@@ -22,6 +22,7 @@ const Comment = () => {
                     <p> Testando muit muito muit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito </p>
                 </div>
                 <div className="remove">
+                    <small>25/04/2023</small>
                     <button> <CiCircleRemove size={20}/> </button>
                 </div>
 
