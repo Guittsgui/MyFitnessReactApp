@@ -5,6 +5,13 @@ export const Body = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    .nocoment{
+        color: gray;
+        letter-spacing: 1px;
+    }
+    h2{
+        margin-bottom: 20px;
+    }
 `;
 
 export const Container = styled.div`

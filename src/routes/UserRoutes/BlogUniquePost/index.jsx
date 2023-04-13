@@ -2,17 +2,18 @@ import * as S from './style'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {api} from './../../../api'
+import Comment from '../../../components/Comment'
 
 const BlogUniquePost = () => {
 
         const {id} = useParams()
         const [post, setPost] = useState({})
+        const [comments, setComments] = useState([])
 
         useEffect(()=>{
             async function loadPost(){
                 const postById = await api.getPostById(id)
                 setPost(postById)
-
             }
 
             loadPost()
@@ -31,6 +32,8 @@ const BlogUniquePost = () => {
                 </S.ContentContainer>
             </S.Container>
             <h2> Comentários: </h2>
+            {comments.length === 1 && <p className='nocoment'> Esse post não possui nenhum Comentário.</p>}
+            <Comment/>
         </S.Body>
 
 }
