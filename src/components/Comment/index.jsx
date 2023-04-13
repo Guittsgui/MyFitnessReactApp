@@ -1,7 +1,22 @@
 import * as S from './style'
 import {CiCircleRemove} from 'react-icons/ci'
+import { useEffect, useState } from 'react'
+import {api} from '../../api'
 
 const Comment = ({comment}) => {
+
+    const [user,setUser] = useState('');
+
+    useEffect(()=>{
+        async function loadUser(){
+            const newUser = await api.getUserByID(comment.userId)
+            setUser(newUser)
+
+        }
+        console.log(user)
+        loadUser()
+    },[])
+
 
         return <S.Container>
             <div className="leftside">
@@ -11,15 +26,15 @@ const Comment = ({comment}) => {
                 <div className="info">
                     <div className='name'>
                         <h3> Name: </h3>
-                        <p> Maria Jorgina </p>
+                        <p> {user.name} </p>
                     </div>
                     <div className='name'>
                         <h3> Email: </h3>
-                        <p> maria@maria.com.br </p>
+                        <p> {user.email} </p>
                     </div>
                 </div>
                 <div className='comment'>
-                    <p> {comment.content} </p>
+                    <p> " {comment.content} "</p>
                 </div>
                 <div className="remove">
                     <small>{comment.date}</small>

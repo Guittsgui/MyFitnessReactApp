@@ -42,7 +42,7 @@ const BlogUniquePost = () => {
                date: date
            }
            const response = await api.addNewComment(newComment)
-
+           setInput('')
         }
 
         return <S.Body>
