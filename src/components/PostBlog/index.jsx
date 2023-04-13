@@ -1,4 +1,5 @@
 import * as S from './style'
+import { Link } from 'react-router-dom'
 
 const PostBlog = ({post}) => {
 
@@ -9,7 +10,7 @@ const PostBlog = ({post}) => {
         <div className="rightSide">
             <h1> {post.title} </h1>
             <h2> Tipo: {post.type} </h2>
-            <p> Leia mais </p>
+            <Link to={`/blog/${post.id}`}> Leia Mais </Link>
             <div>
                 <small> 22/04/22</small>
             </div>

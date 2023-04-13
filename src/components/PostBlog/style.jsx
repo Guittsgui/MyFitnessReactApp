@@ -24,7 +24,8 @@ export const PostContainer = styled.div `
         align-items: center;
         justify-content: center;
         gap: 10px;
-        p{
+        a{
+            text-decoration: none;
             letter-spacing: 2px;
             color: darkgreen;
             font-weight: bolder;

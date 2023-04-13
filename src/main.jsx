@@ -12,12 +12,13 @@ import ImcCalculator from './routes/UserRoutes/ImcCalculator'
 import {AuthContextProvider} from './contexts/Auth/AuthContextProvider'
 import MyDiet from './routes/UserRoutes/MyDiet'
 import MyWorkout from './routes/UserRoutes/MyWorkout'
-import FoodBlog from './routes/UserRoutes/FoodBlog'
+import Blog from './routes/UserRoutes/Blog'
 import FitnessBlog from './routes/UserRoutes/FitnessBlog'
 import AdmAllUsers from './routes/AdmRoutes/AdmAllUsers'
 import AdmEditUser from './routes/AdmRoutes/AdmEditUser'
 import AdmAddDiet from './routes/AdmRoutes/AdmAddDiet'
 import AdmAddBlogPost from './routes/AdmRoutes/AdmAddBlogPost'
+import BlogUniquePost from './routes/UserRoutes/BlogUniquePost'
 
 const router = createBrowserRouter([
   {
@@ -54,8 +55,8 @@ const router = createBrowserRouter([
         element: <MyWorkout/>
       },
       {
-        path: 'foodblog',
-        element: <FoodBlog/>
+        path: 'blog',
+        element: <Blog/>
       },
       {
         path: 'fitnessblog',
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: 'addblogpost',
         element: <AdmAddBlogPost/>
+      },
+      {
+        path: 'blog/:id',
+        element: <BlogUniquePost/>
       }
     ]
 

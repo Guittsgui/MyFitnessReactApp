@@ -1,12 +1,12 @@
 import * as S from './style'
 import PostBlog from '../../../components/PostBlog'
 import { useEffect, useState } from 'react'
-import {api} from './../../../api'
+import {api} from '../../../api'
 
 
 
 
-const FoodBlog = () => {
+const Blog = () => {
 
     const [filterState, setFilterState] = useState('Todos')
     const [listPosts, setListPosts] = useState([])
@@ -43,4 +43,4 @@ const FoodBlog = () => {
         ))}
     </S.Body>
 }
-export default FoodBlog
+export default Blog

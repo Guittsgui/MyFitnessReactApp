@@ -11,7 +11,7 @@ const HeaderUser = () => {
                 <NavLink to="/imccalculator"> Meu IMC</NavLink>
                 <NavLink to="/mydiet"> Minha Dieta</NavLink>
                 <NavLink to="/myworkout"> Meu Treino </NavLink>
-                <NavLink to="/foodblog"> Blogs </NavLink>
+                <NavLink to="/blog"> Blogs </NavLink>
                 <NavLink to="/fitnessblog"> News </NavLink>
             </>
         }

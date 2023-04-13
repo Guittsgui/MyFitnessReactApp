@@ -71,6 +71,12 @@ export const api = {
       const response = await fetch('http://localhost:3000/post')
       const json = await response.json()
       return json
+    },
+
+    getPostById: async(id)=>{
+      const response = await fetch(`http://localhost:3000/post/${id}`)
+      const json =  await response.json()
+      return json
     }
 
 }
