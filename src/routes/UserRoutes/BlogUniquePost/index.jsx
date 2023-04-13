@@ -1,12 +1,15 @@
 import * as S from './style'
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useContext} from 'react'
+import { AuthContext } from '../../../contexts/Auth/AuthContext'
 import {api} from './../../../api'
 import Comment from '../../../components/Comment'
 import {StyledInput} from './../../../components/Input'
 import {StyledButton} from './../../../components/Button'
-const BlogUniquePost = () => {
 
+
+const BlogUniquePost = () => {
+        const auth = useContext(AuthContext)
         const {id} = useParams()
         const [post, setPost] = useState({})
         const [comments, setComments] = useState([])
@@ -18,11 +21,28 @@ const BlogUniquePost = () => {
                 setPost(postById)
             }
 
+            async function loadComments(){
+                const commentsByPost = await api.getCommentsByPostId(id)
+                setComments(commentsByPost)
+            }
+
             loadPost()
+            loadComments()
         },[])
         
-        function handleSubmit(){
-           
+        async function handleSubmit(){
+           if(!input){
+               return
+           }
+           const date = new Date()
+           const newComment = {
+               userId: auth.user.id,
+               postId: id,
+               content: input,
+               date: date
+           }
+           const response = await api.addNewComment(newComment)
+
         }
 
         return <S.Body>
@@ -47,7 +67,10 @@ const BlogUniquePost = () => {
 
             <h2> Comentários: </h2>
             {comments.length === 0 && <p className='nocoment'> Esse post não possui nenhum Comentário.</p>}
-            <Comment/>
+            
+            {comments.map((comment)=>(
+                <Comment key={comment.id} comment={comment}/>
+            ))}
 
            
         </S.Body>

@@ -1,7 +1,7 @@
 import * as S from './style'
 import {CiCircleRemove} from 'react-icons/ci'
 
-const Comment = () => {
+const Comment = ({comment}) => {
 
         return <S.Container>
             <div className="leftside">
@@ -19,10 +19,10 @@ const Comment = () => {
                     </div>
                 </div>
                 <div className='comment'>
-                    <p> Testando muit muito muit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito muitomuit muito muito </p>
+                    <p> {comment.content} </p>
                 </div>
                 <div className="remove">
-                    <small>25/04/2023</small>
+                    <small>{comment.date}</small>
                     <button> <CiCircleRemove size={20}/> </button>
                 </div>
 
