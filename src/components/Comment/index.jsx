@@ -25,7 +25,7 @@ const Comment = ({comment}) => {
     }
 
 
-        return <S.Container>
+        return <S.Container gender={user.id}>
             <div className="leftside">
 
             </div>
