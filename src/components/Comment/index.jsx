@@ -20,7 +20,7 @@ const Comment = ({comment}) => {
     },[])
 
     async function handleRemoveComment(){
-        
+        const response = await api.deleteComment(comment)
 
     }
 

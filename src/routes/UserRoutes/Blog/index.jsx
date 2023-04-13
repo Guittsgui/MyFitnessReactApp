@@ -21,8 +21,8 @@ const Blog = () => {
     },[])
 
     function handleChange(e){
-        setFilterState(e.target.value)
-        
+        setFilterState(e.target.value)   
+ 
         
     }
 

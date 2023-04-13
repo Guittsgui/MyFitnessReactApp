@@ -6,6 +6,8 @@ import {api} from './../../../api'
 import Comment from '../../../components/Comment'
 import {StyledInput} from './../../../components/Input'
 import {StyledButton} from './../../../components/Button'
+import { Link } from 'react-router-dom'
+
 
 
 const BlogUniquePost = () => {
@@ -25,7 +27,6 @@ const BlogUniquePost = () => {
                 const commentsByPost = await api.getCommentsByPostId(id)
                 setComments(commentsByPost)
             }
-
             loadPost()
             loadComments()
         },[])
@@ -47,6 +48,7 @@ const BlogUniquePost = () => {
 
         return <S.Body>
             <S.Container>
+                <Link to="/blog">  Voltar </Link>
                 <S.TitleContainer>
                     <h1> {post.title} </h1>
                 </S.TitleContainer>

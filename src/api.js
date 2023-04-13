@@ -95,6 +95,20 @@ export const api = {
       const response = await fetch (`http://localhost:3000/comment/${id}`)
       const json = await response.json()
       return json
+    },
+
+    deleteComment: async(comment)=>{
+      const response = await fetch(`http://localhost:3000/comment`, 
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'DELETE',
+        body: JSON.stringify(comment)
+      })
+      const json = await response.json()
+      return json
     }
+
 
 }

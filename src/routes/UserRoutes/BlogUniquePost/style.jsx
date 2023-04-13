@@ -22,6 +22,15 @@ export const Container = styled.div`
     box-shadow: 2px 2px 2px #00000075;
     border-radius: 10px;
     margin: 20px;
+    a{
+        text-decoration: none;
+        margin-left: 10px;
+        color: green;
+        cursor: pointer;
+        &:hover{
+            color: yellowgreen;
+        }
+    }
 `;
 export const TitleContainer = styled.div`
     height: 80px;
