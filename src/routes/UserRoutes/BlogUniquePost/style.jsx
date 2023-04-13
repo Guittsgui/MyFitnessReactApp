@@ -53,3 +53,20 @@ export const ContentContainer = styled.div`
     border-radius: 10px;
     box-shadow: 2px 2px 2px #00000075;
 `;
+
+export const AddCommentContainer = styled.div`
+    height: 100px;
+    width: 700px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #00000075;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    input{
+        width: 500px;
+    }
+    margin: 40px;
+`;

@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {api} from './../../../api'
 import Comment from '../../../components/Comment'
-
+import {StyledInput} from './../../../components/Input'
+import {StyledButton} from './../../../components/Button'
 const BlogUniquePost = () => {
 
         const {id} = useParams()
@@ -31,8 +32,15 @@ const BlogUniquePost = () => {
                     {post.content}
                 </S.ContentContainer>
             </S.Container>
+
+            <S.AddCommentContainer>
+                <StyledInput placeholder='Adicione seu Comentário...'/>
+                <StyledButton>Adicionar + </StyledButton>
+            </S.AddCommentContainer>
+
             <h2> Comentários: </h2>
             {comments.length === 1 && <p className='nocoment'> Esse post não possui nenhum Comentário.</p>}
+
             <Comment/>
         </S.Body>
 
