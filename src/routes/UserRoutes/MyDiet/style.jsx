@@ -21,3 +21,13 @@ export const header = styled.header`
     justify-content: center;
     margin-top: 20px;
 `;
+
+export const noDietContainer = styled.div`
+    border: 2px solid green;
+    padding: 20px;
+    text-align: center;
+    color: green;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+`;

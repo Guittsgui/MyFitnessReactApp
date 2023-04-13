@@ -1,10 +1,12 @@
 import * as S from './style'
 import {CiCircleRemove} from 'react-icons/ci'
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useContext} from 'react'
+import { AuthContext } from '../../contexts/Auth/AuthContext'
 import {api} from '../../api'
 
 const Comment = ({comment}) => {
 
+    const auth = useContext(AuthContext)
     const [user,setUser] = useState('');
 
     useEffect(()=>{
@@ -16,6 +18,11 @@ const Comment = ({comment}) => {
         console.log(user)
         loadUser()
     },[])
+
+    async function handleRemoveComment(){
+        
+
+    }
 
 
         return <S.Container>
@@ -38,7 +45,11 @@ const Comment = ({comment}) => {
                 </div>
                 <div className="remove">
                     <small>{comment.date}</small>
-                    <button> <CiCircleRemove size={20}/> </button>
+                    {auth.user.id === comment.userId && 
+                        <button onClick={handleRemoveComment}>
+                             <CiCircleRemove size={20}/> 
+                        </button>                  
+                    }                    
                 </div>
 
             </div>
