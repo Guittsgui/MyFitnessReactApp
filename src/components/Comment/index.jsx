@@ -13,9 +13,7 @@ const Comment = ({comment}) => {
         async function loadUser(){
             const newUser = await api.getUserByID(comment.userId)
             setUser(newUser)
-
         }
-        console.log(user)
         loadUser()
     },[])
 
@@ -37,7 +35,7 @@ const Comment = ({comment}) => {
                     </div>
                     <div className='name'>
                         <h3> Email: </h3>
-                        <p> {user.email} </p>
+                        <p> {user.email} {user.gender}</p>
                     </div>
                 </div>
                 <div className='comment'>

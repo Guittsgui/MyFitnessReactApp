@@ -18,7 +18,7 @@ export const Container = styled.div`
         flex: 1;
         height: 100px; 
         margin-top: 10px;
-        background-image: url(${(props) => (props.gender === 'male' ? "https://img.freepik.com/vetores-premium/homem-jovem-avatar-personagem-vector-ilustracao-design_24877-18516.jpg" : "https://media.istockphoto.com/id/943945990/pt/vetorial/woman-female-avatar-character.jpg?s=170667a&w=0&k=20&c=IjRLUzwdp3dN3v8y435Fk7KJYjmpDsMky_l_L2tzscg=")});
+        background-image: url(${(props) => (props.gender === 'male' ? "https://media.istockphoto.com/id/943945990/pt/vetorial/woman-female-avatar-character.jpg?s=170667a&w=0&k=20&c=IjRLUzwdp3dN3v8y435Fk7KJYjmpDsMky_l_L2tzscg=" : "https://img.freepik.com/vetores-premium/homem-jovem-avatar-personagem-vector-ilustracao-design_24877-18516.jpg")});
         background-size: cover;
         background-position: center;
         border-radius: 50%;
